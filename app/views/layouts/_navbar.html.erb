@@ -1,0 +1,15 @@
+<div class="flex p-4 justify-between w-full bg-white">
+    <div class="w-full">
+        <a href="/" class="text-lg font-semibold">Posts</a>
+    </div>
+    <div class="flex gap-2 justify-end w-full">
+    <% unless user_signed_in? %>
+        <a href="<%= new_user_registration_path %>" class="p-2 duration-200 hover:bg-gray-200 rounded-md">Sign up</a>
+        <a href="<%= new_user_session_path %>" class="p-2 duration-200 hover:bg-gray-200 rounded-md">Login</a>
+    <% end %>
+
+    <% if user_signed_in? %>
+        <a href="<%= destroy_user_session_path %>" class="p-2 duration-200 hover:bg-gray-200 rounded-md">Log out</a>
+    <% end %>
+    </div>
+</div>
